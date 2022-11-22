@@ -1,0 +1,23 @@
+<div class="form-group">
+    <label for="pname">Product Name</label>
+    <input type="text" name="" [value]="product?.pname" id="pname" class="form-control">
+</div>
+<div class="form-group">
+    <label for="pStatus">Product Status</label>
+    <select name="" id="pStatus"  class="form-control" [value]="product?.pStatus">
+        <option value="In Progress">In Progress</option>
+        <option value="Dispached">Dispached</option>
+        <option value="Delivered">Delivered</option>
+    </select>
+</div>
+<div>
+    <button class="btn btn-primary">Update Product</button>
+</div>
+<hr>
+<!-- <a class="btn btn-link" routerLink="users">Go to Users 1</a>   -->
+<!-- <a class="btn btn-link" routerLink="/users">Go to Users 1</a>   -->
+<!-- localhost:4200/users  -->
+<!-- http://localhost:4200/products/users  -->
+<!-- <hr> -->
+<!-- <button class="btn btn-primary" (click)="gotoUsers()">Go to Users 2</button> -->
+<!-- {{product | json}} -->
