@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Iuser } from 'src/app/shared/model/data';
 import { UsersService } from 'src/app/shared/services/users.service';
 
@@ -17,12 +17,22 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     // this.user = this.userService.getUser(this.userId);
     // console.log(this.user);
-    console.log(this.route.snapshot.params);
-    this.userId = +this.route.snapshot.params["id"];
+    // console.log(this.route.snapshot.params);
+    // console.log(this.route.params); // observable
+    // this.userId = +this.route.snapshot.params["id"];
     
-    this.user = this.userService.getUser(this.userId);
-    console.log(this.user);
-    
+    this.route.url
+    this.route.params
+              .subscribe(
+                (myParams:Params) => {
+                  console.log(myParams);
+                  this.userId = +myParams['id'];
+                  this.user = this.userService.getUser(this.userId);
+                }
+              )
   }
 
 }
+// observable >> to handle async oprations
+// Are not native part of Angular
+// Rx.js

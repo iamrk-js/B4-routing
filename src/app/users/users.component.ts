@@ -10,6 +10,7 @@ import { UsersService } from '../shared/services/users.service';
 })
 export class UsersComponent implements OnInit {
   users: Iuser[] = [];
+  activeUserId:number = 1
   constructor(
           private usersService: UsersService, 
           private router : Router

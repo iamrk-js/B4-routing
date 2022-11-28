@@ -10,24 +10,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './users/user/user.component';
 import { ProductComponent } from './products/product/product.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './login/login.component';
 
-const appRoutes: Routes = [
-  {
-    path: '', component: DashboardComponent, // localhost:4200/
-  },
-  {
-    path: 'products', component: ProductsComponent, // localhost:4200/products
-  },
-  {
-    path: 'products/:id', component: EditProductComponent, // localhost:4200/products
-  },
-  {
-    path: 'users', component: UsersComponent  // localhost:4200/users
-  },
-  {
-    path: 'users/:id', component: UserComponent  // localhost:4200/users
-  }
-]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,11 +23,12 @@ const appRoutes: Routes = [
     DashboardComponent,
     UserComponent,
     ProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

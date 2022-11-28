@@ -6,5 +6,6 @@ export interface Iuser {
 export interface Iproduct {
     pname : string;
     pId : number;
-    pStatus : string
+    pStatus : string;
+    editStatus : number
 }
