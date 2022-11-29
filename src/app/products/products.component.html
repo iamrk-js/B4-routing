@@ -1,11 +1,10 @@
 <div class="row">
     <div class="col-sm-4">
         <ul class="list-group">
-            <li class="list-group-item" 
-            *ngFor="let prod of products"
-            [ngClass]="{'active' : prod?.pId === 3 }"
-            [routerLink]="['/products', prod?.pId]"
-            >
+            <li class="list-group-item" *ngFor="let prod of products"
+                [ngClass]="{'active' : prod?.pId === activeProductId }" [routerLink]="['/products', prod?.pId]"
+                [queryParams]="{canEdit : prod?.editStatus }"
+                (click)="activeProductId = prod?.pId!">
                 {{prod.pname}}
             </li>
         </ul>
@@ -13,7 +12,8 @@
     </div>
     <div class="col-sm-6">
         <!-- <app-edit-product></app-edit-product>
-        <hr>
-        <app-product></app-product> -->
+        <hr>-->
+        <!-- <app-product></app-product>  -->
+        <router-outlet></router-outlet>
     </div>
 </div>

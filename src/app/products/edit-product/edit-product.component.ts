@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Iproduct } from 'src/app/shared/model/data';
 import { ProductsService } from 'src/app/shared/services/products.service';
 
@@ -11,21 +11,33 @@ import { ProductsService } from 'src/app/shared/services/products.service';
 export class EditProductComponent implements OnInit {
   product: Iproduct | undefined;
   productId: number = 3;
+  canEdit:number = 1;
   constructor(private productService: ProductsService,
     private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-  
-    this.productId = +this.route.snapshot.params['id'];
-    console.log(this.productId);
-    this.product = this.productService.getProduct(this.productId);
+    console.log(this.route.snapshot.params);
+
+    // this.productId = +this.route.snapshot.params['id'];
+    // console.log(this.productId);
+    this.route.params
+      .subscribe((params: Params) => {
+        this.productId = +params['id'];
+        this.product = this.productService.getProduct(this.productId);
+      })
+      this.route.queryParams
+          .subscribe((param:Params) => {
+            console.log(param);
+            this.canEdit = +param['canEdit']
+          })
+
   }
   gotoUsers() {
     // this.router.navigate(['users'],{relativeTo : this.route})
     this.router.navigate(['users'])
-  
-    
+
+
   }
 }
 

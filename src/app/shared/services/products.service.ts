@@ -9,17 +9,20 @@ export class ProductsService {
     {
       pname: "SamSung M31",
       pId: 1,
-      pStatus: "In Progress"
+      pStatus: "In Progress",
+      editStatus: 1
     },
     {
       pname: "SamSung 43 TV ",
       pId: 2,
-      pStatus: "Dispached"
+      pStatus: "Dispached",
+      editStatus: 1
     },
     {
       pname: "Iphone",
       pId: 3,
-      pStatus: "Delivered"
+      pStatus: "Delivered",
+      editStatus: 0
     }
   ]
   constructor() { }
