@@ -1,8 +1,15 @@
 <div class="row">
     <div class="col-sm-4">
         <ul class="list-group">
+<<<<<<< HEAD
             <li class="list-group-item" *ngFor="let user of users" [class.active]="user.id === activeUserId"
                 [routerLink]="['/users', user.id]" (click)="activeUserId = user.id">
+=======
+            <li class="list-group-item" *ngFor="let user of users" 
+            [class.active]="user.id === activeUserId"
+            [routerLink]="['/users', user.id]"
+            (click) = "activeUserId = user.id">
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
                 {{user.userName}}
             </li>
         </ul>

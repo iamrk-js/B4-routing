@@ -20,8 +20,13 @@ export class UserComponent implements OnInit {
     // console.log(this.route.snapshot.params);
     // console.log(this.route.params); // observable
     // this.userId = +this.route.snapshot.params["id"];
+<<<<<<< HEAD
     
     
+=======
+    
+    this.route.url
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
     this.route.params
               .subscribe(
                 (myParams:Params) => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Iproduct } from 'src/app/shared/model/data';
 import { ProductsService } from 'src/app/shared/services/products.service';
 
@@ -26,6 +27,7 @@ export class ProductComponent implements OnInit {
   goToEditProduct() {
     this.router.navigate(['/products', this.productId, 'edit'], {
       queryParamsHandling: 'preserve'
+
     })
   }
 }

@@ -1,10 +1,20 @@
 <div class="row">
     <div class="col-sm-4">
         <ul class="list-group">
+<<<<<<< HEAD
             <li class="list-group-item" *ngFor="let prod of products"
                 [ngClass]="{'active' : prod?.pId === activeProductId }" [routerLink]="['/products', prod?.pId]"
                 [queryParams]="{canEdit : prod?.editStatus }"
                 (click)="activeProductId = prod?.pId!">
+=======
+            <li class="list-group-item" 
+            *ngFor="let prod of products"
+            [ngClass]="{'active' : prod?.pId === slectedProduct }"
+            [routerLink]="['/products', prod?.pId]"
+            [queryParams]="{canEdit : prod?.editStatus }"
+            (click) = "slectedProduct = prod?.pId!"
+            >
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
                 {{prod.pname}}
             </li>
         </ul>
@@ -12,8 +22,13 @@
     </div>
     <div class="col-sm-6">
         <!-- <app-edit-product></app-edit-product>
+<<<<<<< HEAD
         <hr>-->
         <!-- <app-product></app-product>  -->
+=======
+        <hr>
+        <app-product></app-product> -->
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
         <router-outlet></router-outlet>
     </div>
 </div>

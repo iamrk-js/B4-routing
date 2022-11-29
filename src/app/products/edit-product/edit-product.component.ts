@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
+=======
+import { Component, OnInit, Query } from '@angular/core';
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Iproduct } from 'src/app/shared/model/data';
 import { ProductsService } from 'src/app/shared/services/products.service';
@@ -11,7 +15,11 @@ import { ProductsService } from 'src/app/shared/services/products.service';
 export class EditProductComponent implements OnInit {
   product: Iproduct | undefined;
   productId: number = 3;
+<<<<<<< HEAD
   canEdit:number = 1;
+=======
+  canEdit: number = 1;
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
   constructor(private productService: ProductsService,
     private router: Router,
     private route: ActivatedRoute) { }
@@ -26,18 +34,30 @@ export class EditProductComponent implements OnInit {
         this.productId = +params['id'];
         this.product = this.productService.getProduct(this.productId);
       })
+<<<<<<< HEAD
       this.route.queryParams
           .subscribe((param:Params) => {
             console.log(param);
             this.canEdit = +param['canEdit']
           })
+=======
+
+    this.route.queryParams
+      .subscribe((quryparam: Params) => {
+        console.log(quryparam);
+        this.canEdit = +quryparam['canEdit']
+      })
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
 
   }
   gotoUsers() {
     // this.router.navigate(['users'],{relativeTo : this.route})
     this.router.navigate(['users'])
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
   }
 }
 

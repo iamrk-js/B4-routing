@@ -1,16 +1,19 @@
-<app-navigation></app-navigation>
+<div>
+    <app-navigation></app-navigation>
 
-<hr>
+    <hr>
 
-<div class="container mt-4">
-  <div class="row">
-    <div class="col-sm-12">
-      <!-- router directive  -->
-      <router-outlet></router-outlet>  
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- router directive  -->
+                <router-outlet></router-outlet>
+
+            </div>
+        </div>
     </div>
-  </div>
 </div>
-
+<!-- <app-login *ngIf="!isLoggedIn"></app-login> -->
 <!-- How to communicate between 2 diffrent components 
 
 1 Input and Output Decorators 

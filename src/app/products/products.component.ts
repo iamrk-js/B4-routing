@@ -10,9 +10,15 @@ import { ProductsService } from '../shared/services/products.service';
 })
 export class ProductsComponent implements OnInit {
   products : Iproduct[] = [];
+<<<<<<< HEAD
   activeProductId:number = 1;
   constructor(private productService : ProductsService, 
       private route : ActivatedRoute) { }
+=======
+  slectedProduct:number = 3
+  constructor(private productService : ProductsService,
+    private route : ActivatedRoute) { }
+>>>>>>> 9231973d0ed1cecacab86a1da23d2075261422df
 
   ngOnInit(): void {
     this.products = this.productService.getAllProducts();

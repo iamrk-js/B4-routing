@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import { ProductComponent } from './products/product/product.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
     path : '**', redirectTo : 'page-not-found'
   },
 ]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
